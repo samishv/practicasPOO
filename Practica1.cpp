@@ -17,8 +17,13 @@ main(){
     int cantidad{0};
     char dia{};
     char venta{};
-    float totalv{0.0f};
+    float totalv1{0.0f};
+    float totalv2{0.0f};
+    float totalv3{0.0f};
+    float totalv4{0.0f};
+    float totalv5{0.0f};
     float totald{0.0f};
+    float totalv{0.0f};
 
     cout << " :::VENTA DE PRODUCTOS::: \n" << " Almacen de pedidos por correo \n\n"
     << " Contamos con los siguientes productos en nuestro inventario: \n" << endl;
@@ -58,19 +63,19 @@ main(){
 
             switch(prod){
             case 1:
-                totalv += PROD1*static_cast <float> (cantidad);
+                totalv1 += PROD1*static_cast <float> (cantidad);
                 break;
             case 2:
-                totalv += PROD2*static_cast <float> (cantidad);
+                totalv2 += PROD2*static_cast <float> (cantidad);
                 break;
             case 3:
-                totalv += PROD3*static_cast <float> (cantidad);
+                totalv3 += PROD3*static_cast <float> (cantidad);
                 break;
             case 4:
-                totalv += PROD4*static_cast <float> (cantidad);
+                totalv4 += PROD4*static_cast <float> (cantidad);
                 break;
             case 5:
-                totalv += PROD5*static_cast <float> (cantidad);
+                totalv5 += PROD5*static_cast <float> (cantidad);
                 break;
             default:
                 cout << "\n Error en el programa" << endl;
@@ -84,6 +89,14 @@ main(){
             cin >> venta;
             cin.ignore();
         }while(tolower(venta) == 's');
+
+        cout <<"\n" << setw(13)<< "Producto" << setw(10) << "Cantidad"<< setw(9) << "Total" << endl;
+        cout << setw(9)<< "1" << setw(10) << totalv1/PROD1 << setw(10) << "$" << totalv1 << endl;
+        cout << setw(9)<< "2" << setw(10) << totalv2/PROD2 << setw(10) << "$" << totalv2 << endl;
+        cout << setw(9)<< "3" << setw(10) << totalv3/PROD3 << setw(10) << "$" << totalv3 << endl;
+        cout << setw(9)<< "4" << setw(10) << totalv4/PROD4 << setw(10) << "$" << totalv4 << endl;
+        cout << setw(9)<< "5" << setw(10) << totalv5/PROD5 << setw(10) << "$" << totalv5 << endl;
+        totalv = totalv1+totalv2+totalv3+totalv4+totalv5;
 
         cout << "\n ::::: Total de la venta: $" << totalv << " :::::" << endl;
         totald += totalv;
