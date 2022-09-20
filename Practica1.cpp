@@ -2,7 +2,7 @@
 #include <cctype>
 #include <limits>
 #include <ios>
-#include<iomanip>
+#include <iomanip>
 
 using namespace std;
 
@@ -17,13 +17,13 @@ main(){
     int cantidad{0};
     char dia{};
     char venta{};
+    float totalv{0.0f};
     float totalv1{0.0f};
     float totalv2{0.0f};
     float totalv3{0.0f};
     float totalv4{0.0f};
     float totalv5{0.0f};
     float totald{0.0f};
-    float totalv{0.0f};
     float totald1{0.0f};
     float totald2{0.0f};
     float totald3{0.0f};
@@ -112,7 +112,7 @@ main(){
         cout << setw(9)<< "4" << setw(10) << totalv4/PROD4 << setw(10) << "$" << totalv4 << endl;
         cout << setw(9)<< "5" << setw(10) << totalv5/PROD5 << setw(10) << "$" << totalv5 << endl;
 
-            totalv = totalv1+totalv2+totalv3+totalv4+totalv5;
+            totalv = totalv1 + totalv2 + totalv3 + totalv4 + totalv5;
 
         cout << "\n ::::: Total de la venta: $" << totalv << " :::::" << endl;
         totald += totalv;
