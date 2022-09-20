@@ -97,6 +97,10 @@ main(){
             cout << "\n\t Otro producto s/n: ";
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
             cin >> venta;
+            while(!isalpha(venta)){
+                cout << "\n\tNo valido. Introduzca s/n: ";
+                cin >> venta;
+            }
             cin.ignore();
         }while(tolower(venta) == 's');
 
@@ -116,9 +120,13 @@ main(){
         totalv1 = 0; totalv2 = 0; totalv3 = 0; totalv4 = 0; totalv5 = 0;
 
         cout << "\n\tNueva venta s/n: ";
-
         cin >> dia;
+        while(!isalpha(dia)){
+          cout << "\n\tNo valido. Introduzca s/n: ";
+          cin >> dia;
+        }
         cin.ignore();
+
     }while(tolower(dia) == 's');
 
     cout << "\n     --------------------------" << endl;
