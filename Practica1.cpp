@@ -33,6 +33,7 @@ main(){
         do{
             while(prod == 0){
                 cout << "\n Introduzca el numero del producto: ";
+
                 cin >> prod;
                 if(prod == 1||prod == 2||prod == 3||prod == 4||prod == 5){
                     cin.ignore(numeric_limits<streamsize>::max(), '\n');
@@ -81,6 +82,7 @@ main(){
             cout << "\n\t Otro producto s/n: ";
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
             cin >> venta;
+            cin.ignore();
         }while(tolower(venta) == 's');
 
         cout << "\n ::::: Total de la venta: $" << totalv << " :::::" << endl;
@@ -90,6 +92,7 @@ main(){
         cout << "\n\tNueva venta s/n: ";
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
         cin >> dia;
+        cin.ignore();
     }while(tolower(dia) == 's');
 
     cout << "\n <<<<< Venta total del dia: $" << totald << " >>>>>" << endl;
