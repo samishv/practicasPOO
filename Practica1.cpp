@@ -1,29 +1,52 @@
+/**
+    * @file Practica1.cpp
+    * @version 1.0
+    * @date 20/09/2022
+    * @author Ramírez López Emilio, Sánchez Díaz Nadya, Velázquez Osorio Samara Ishtar
+    * @title Práctica 1
+    */
+
 #include <iostream>
 #include <cctype>
 #include <limits>
 #include <ios>
 #include <iomanip>
 
+/**
+    * @brief aquí explicamos que es el using namespace
+    */
 using namespace std;
 
-main(){
+int main(){
+
+/**
+    * @brief Constantes de tipo flotante que almacenan el precio de cada producto
+    */
     const float PROD1{2.98f};
     const float PROD2{4.50f};
     const float PROD3{9.98f};
     const float PROD4{4.49f};
     const float PROD5{6.87f};
 
-    int prod{0};
-    int cantidad{0};
-    char dia{};
-    char venta{};
-    float totalv{0.0f};
+    int prod{0};        /**<Guarda el número de producto escogido por el usuario*/
+    int cantidad{0};    /**<Guarda la cantidad de producto ingresada por el usuario*/
+    char nuevaVenta{};    /**<Dependiendo de lo que almacene, se registrarán más ventas*/
+    char nuevoProd{};     /**<Dependiendo de lo que almacene, se registrarán más productos*/
+    float totalv{0.0f};   /**<Va almacenando los ingresos totales por venta*/
+    float totald{0.0f};   /**<Va almacenando los ingresos totales al cierre*/
+
+   /**
+    * @brief <Van almacenando los ingresos de cada uno de los productos por venta (el numero al final de la variable corresponde al numero de producto)
+    */
     float totalv1{0.0f};
     float totalv2{0.0f};
     float totalv3{0.0f};
     float totalv4{0.0f};
     float totalv5{0.0f};
-    float totald{0.0f};
+
+   /**
+    * @brief <Van almacenando los ingresos de cada uno de los productos por día (el numero al final de la variable corresponde al numero de producto)
+    */
     float totald1{0.0f};
     float totald2{0.0f};
     float totald3{0.0f};
@@ -33,18 +56,35 @@ main(){
     cout << " :::VENTA DE PRODUCTOS::: \n" << " Almacen de pedidos por correo \n\n"
     << " Contamos con los siguientes productos en nuestro inventario: \n" << endl;
 
+   /**
+    * @brief menu de productos disponibles
+    */
     cout << setw(13)<< " Producto 1" << setw(18) << "$ 2.98 \n"
          << setw(13)<< " Producto 2" << setw(18) << "$ 4.50 \n"
          << setw(13)<< " Producto 3" << setw(18) << "$ 9.98 \n"
          << setw(13)<< " Producto 4" << setw(18) << "$ 4.49 \n"
          << setw(13)<< " Producto 5" << setw(18) << "$ 6.87 \n" << endl;
 
+    /**
+    * @brief do-while que realiza nuevas ventas siempre que el usuario así lo desee (que ingrese una 's')
+    */
     do{
+
+    /**
+    * @brief do-while que da la posibilidad de ingresar otro producto siempre que el usuario así lo desee (que ingrese una 's')
+    */
         do{
+            /**
+            * @brief while que valida que el dato ingresado sea un número
+            */
             while(prod == 0){
                 cout << "\n Introduzca el numero del producto: ";
 
                 cin >> prod;
+
+                    /**
+                    * @brief if que valida la existencia del producto
+                    */
                 if(prod == 1||prod == 2||prod == 3||prod == 4||prod == 5){
                     cin.ignore(numeric_limits<streamsize>::max(), '\n');
                 }else{
@@ -54,11 +94,16 @@ main(){
                     cout << " Producto no valido" << endl;
                 }
             }
-
+            /**
+            * @brief while que solicita la cantidad del producto seleccionado
+            */
             while(cantidad == 0){
                 cout << "\n Introduzca la cantidad del producto: ";
                 cin >> cantidad;
-                if(cantidad == 0){
+                    /**
+                    * @brief if que valida que el dato sea un numero positivo
+                    */
+                if(cantidad <= 0){
                     cin.clear();
                     cin.ignore(numeric_limits<streamsize>::max(), '\n');
                     cantidad = 0;
@@ -66,6 +111,11 @@ main(){
                 }
             }
 
+            /**
+            * @brief switch con el que depediendo del producto elegido, se calcula el total por venta y por dia de la siguiente manera:
+            * sea n el numero de producto; totalvn ira acumulando el costo total segun la cantidad vendida de cada producto hasta terminar
+            * la venta, mientras que totaldn lo almacenará hasta el cierre de la venta
+            */
             switch(prod){
             case 1:
                 totalv1 += PROD1*static_cast <float> (cantidad);
@@ -91,19 +141,27 @@ main(){
                 cout << "\n Error en el programa" << endl;
                 break;
             }
+
             prod = 0;
             cantidad = 0;
 
+            /**
+            * @brief Pregunta si desea agregagar otro producto mediante s/n y válida que el dato sea una letra
+            */
+
             cout << "\n\t Otro producto s/n: ";
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            cin >> venta;
-            while(!isalpha(venta)){
+            cin >> nuevoProd;
+            while(!isalpha(nuevoProd)){
                 cout << "\n\tNo valido. Introduzca s/n: ";
-                cin >> venta;
+                cin >> nuevoProd;
             }
             cin.ignore();
-        }while(tolower(venta) == 's');
+        }while(tolower(nuevoProd) == 's');
 
+        /**
+        * @brief Imprime el ticket de la venta
+        */
         cout << "\n     --------------------------" << endl;
         cout << setw(13)<< "Producto" << setw(10) << "Cantidad"<< setw(9) << "Total" << endl;
         cout << setw(9)<< "1" << setw(10) << totalv1/PROD1 << setw(10) << "$" << totalv1 << endl;
@@ -119,16 +177,22 @@ main(){
         totalv = 0;
         totalv1 = 0; totalv2 = 0; totalv3 = 0; totalv4 = 0; totalv5 = 0;
 
+        /**
+        * @brief Pregunta si desea realizar otra venta mediante s/n y válida que el dato sea una letra
+        */
         cout << "\n\tNueva venta s/n: ";
-        cin >> dia;
-        while(!isalpha(dia)){
+        cin >> nuevaVenta;
+        while(!isalpha(nuevaVenta)){
           cout << "\n\tNo valido. Introduzca s/n: ";
-          cin >> dia;
+          cin >> nuevaVenta;
         }
         cin.ignore();
 
-    }while(tolower(dia) == 's');
+    }while(tolower(nuevaVenta) == 's');
 
+    /**
+    * @brief Imprime el ticket de las ventas al cierre
+    */
     cout << "\n     --------------------------" << endl;
     cout << setw(13)<< "Producto" << setw(10) << "Cantidad"<< setw(9) << "Total" << endl;
     cout << setw(9)<< "1" << setw(10) << totald1/PROD1 << setw(10) << "$" << totald1 << endl;
