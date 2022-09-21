@@ -3,7 +3,7 @@
     * @version 1.0
     * @date 20/09/2022
     * @author Ramírez López Emilio, Sánchez Díaz Nadya, Velázquez Osorio Samara Ishtar
-    * @title Práctica 1
+
     */
 
 #include <iostream>
@@ -12,9 +12,7 @@
 #include <ios>
 #include <iomanip>
 
-/**
-    * @brief aquí explicamos que es el using namespace
-    */
+
 using namespace std;
 
 int main(){
