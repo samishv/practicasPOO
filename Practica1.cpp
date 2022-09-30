@@ -1,4 +1,4 @@
-/**
+    /**
     * @file Practica1.cpp
     * @version 1.0
     * @date 20/09/2022
@@ -12,12 +12,22 @@
 #include <ios>
 #include <iomanip>
 
+/**
+* @namespace std
+*/
 
+/**
+* @brief descripción del std
+*/
 using namespace std;
+
+/**
+* @ brief Función principal del programa
+*/
 
 int main(){
 
-/**
+    /**
     * @brief Constantes de tipo flotante que almacenan el precio de cada producto
     */
     const float PROD1{2.98f};
@@ -26,7 +36,12 @@ int main(){
     const float PROD4{4.49f};
     const float PROD5{6.87f};
 
-    int prod{0};        /**<Guarda el número de producto escogido por el usuario*/
+    int prod{0};        /**
+                         * @var prod
+                         */
+                         /**
+                         * @brief lorem ipsum
+                         */
     int cantidad{0};    /**<Guarda la cantidad de producto ingresada por el usuario*/
     char nuevaVenta{};    /**<Dependiendo de lo que almacene, se registrarán más ventas*/
     char nuevoProd{};     /**<Dependiendo de lo que almacene, se registrarán más productos*/
