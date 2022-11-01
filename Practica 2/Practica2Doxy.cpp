@@ -22,7 +22,7 @@ void multMatriz();
 void transMatriz();
 
 /**
- * @ brief Función principal del programa
+ * @brief Función principal del programa
  */
 int main(){
 
