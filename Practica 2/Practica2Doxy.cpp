@@ -11,7 +11,6 @@
 
 using namespace std;
 
-void calculadora();
 void menu();
 void leerMatriz(int, int, int);
 void randomMatriz(int, int, int, unsigned int);
@@ -22,25 +21,14 @@ void multMatriz();
 void transMatriz();
 
 /**
- * @brief Función principal del programa
- */
-int main(){
-
-    calculadora();
-
-    return 0;
-}
-
-/**
- * @brief Permite elegir que operación realizar. Son 4 opciones, suma,
+ * @brief Función principal del programa. Permite elegir que operación realizar. Son 4 opciones, suma,
  *        resta, multiplicación, entre 2 matrices, y transpuesta de una matriz; y
  *        la opción de salir, cualquier otra no se acepta.
  * @see sumaMatriz, restaMatriz, multMatriz y transMatriz.
  */
-void calculadora(){
+int main(){
 
-
-    int opcion{}; /**int opcion Guarda el número de la opción seleccionada*/
+   int opcion{}; /**int opcion Guarda el número de la opción seleccionada*/
 
 
     do{
@@ -73,7 +61,9 @@ void calculadora(){
                 break;
         }
     }while(opcion != 5);
+    return 0;
 }
+
 
 /**
  * @brief Muestra un menu con las operaciones que puede realizar la calculadora de matrices y solicita escoger una
