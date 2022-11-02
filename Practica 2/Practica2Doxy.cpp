@@ -32,13 +32,16 @@ int main(){
 }
 
 /**
- * @brief calculadora Permite elegir que operación realizar. Son 4 opciones, suma,
+ * @brief Permite elegir que operación realizar. Son 4 opciones, suma,
  *        resta, multiplicación, entre 2 matrices, y transpuesta de una matriz; y
  *        la opción de salir, cualquier otra no se acepta.
  * @see sumaMatriz, restaMatriz, multMatriz y transMatriz.
  */
 void calculadora(){
-    int opcion{};   /**< Guarda el número de la opción seleccionada */
+
+
+    int opcion{}; /**int opcion Guarda el número de la opción seleccionada*/
+
 
     do{
         menu();
@@ -73,7 +76,7 @@ void calculadora(){
 }
 
 /**
- * @ brief menu Muestra un menu con las operaciones que puede realizar la calculadora de matrices
+ * @brief Muestra un menu con las operaciones que puede realizar la calculadora de matrices y solicita escoger una
  */
 void menu(){
     cout << "\n         CALCULADORA DE MATRICES"
@@ -92,12 +95,11 @@ void menu(){
 }
 
 /**
- * @brief leerMatriz Permite ingresar los datos de la matriz. El usuario podra
+ * @brief Permite ingresar los datos de la matriz. El usuario podra
           ir ingresando los datos de la matiz por filas.
- * @param M Matriz donde se van almacenando los datos.
+ * @param **M Doble apuntador que apunta al arreglo de filas reservadas de la matriz a escribir
  * @param fila El numero de filas que va a tener la matriz.
  * @param columna El numero de columnas que va a tener la matriz.
- * @return
  */
 void leerMatriz(int **M, int fila, int columna){
     cout << "\nRellenar la matriz:\n";
@@ -110,13 +112,12 @@ void leerMatriz(int **M, int fila, int columna){
 }
 
 /**
- * @brief randomMatriz Genera una matriz con números aleatorios. Se creará una
+ * @brief Genera una matriz con números aleatorios. Se creará una
  *        matriz con la cantidad de filas y columnas solicitada con números aleatorios.
- * @param M Matriz donde se van almacenando los datos.
+ * @param **M Doble apuntador que apunta al arreglo de filas reservadas de la matriz a escribir
  * @param fila El numero de filas que va a tener la matriz.
  * @param columna El numero de columnas que va a tener la matriz.
  * @param semilla A partir de la cual se generan los numeros aleatorios.
- * @return Matriz fila x columna de numeros aleatorios entre 1 y 100.
  */
 void randomMatriz(int **M, int fila, int columna, unsigned int semilla){
     default_random_engine motorG(semilla);
@@ -132,11 +133,10 @@ void randomMatriz(int **M, int fila, int columna, unsigned int semilla){
 }
 
 /**
- * @brief imprimirMatriz Permite mostrar en pantalla una matriz ya creada.
- * @param M
+ * @brief Permite mostrar en pantalla una matriz ya creada.
+ * @param **M Doble apuntador que apunta al arreglo de filas reservadas de la matriz a escribir
  * @param fila El numero de filas que tiene la matriz.
  * @param columna El numero de columnas que tiene la matriz.
- * @return
  */
 void imprimirMatriz(int **M, int fila, int columna){
     for(size_t i{0}; i < fila; i++){
@@ -149,13 +149,12 @@ void imprimirMatriz(int **M, int fila, int columna){
 }
 
 /**
- * @brief sumaMatriz Permite sumar 2 matrices con dimenciones iguales.
- * @return Matriz cuyos elementos son la suma de dos matrices.
+ * @brief Permite sumar 2 matrices con dimensiones iguales.
  * @sa randomMatriz, leerMatriz, imprimirMatriz.
  */
 void sumaMatriz(){
-    int fila{};     /**< Guarda el número de filas que tendrá la matriz */
-    int columna{};  /**< Guarda el número de columnas que tendrá la matriz */
+    int fila{};     /** < int fila Guarda el número de filas que tendrá la matriz */
+    int columna{};  /** < int columna Guarda el número de columnas que tendrá la matriz */
 
     cout << "\nLAS MATRICES TENDRAN LAS MISMAS DIMENSIONES\n"
          << "\nDimensiones de las matrices:";
@@ -215,13 +214,12 @@ void sumaMatriz(){
 }
 
 /**
- * @brief restaMatriz Permite restar 2 matrices con dimenciones iguales.
- * @return Matriz cuyos elementos son la resta de dos matrices.
+ * @brief Permite restar 2 matrices con dimensiones iguales.
  * @sa randomMatriz, leerMatriz, imprimirMatriz.
  */
 void restaMatriz(){
-    int fila{};     /**< Guarda el número de filas que tendrá la matriz */
-    int columna{};  /**< Guarda el número de columnas que tendrá la matriz */
+    int fila{};     /**< int fila Guarda el número de filas que tendrá la matriz */
+    int columna{};  /**< int columna Guarda el número de columnas que tendrá la matriz */
 
     cout << "\nLAS MATRICES TENDRAN LAS MISMAS DIMENSIONES\n"
          << "\nDimensiones de las matrices:";
@@ -281,16 +279,15 @@ void restaMatriz(){
 }
 
 /**
- * @brief multMatriz Permite multiplicar 2 matrices. El número de columnas de
- *        la rimer matriz debe ser el mismo numero de filas de la segunda.
- * @return Matriz cuyos elementos son la multiplicación de dos matrices.
+ * @brief Permite multiplicar 2 matrices. El número de columnas de
+ *        la primer matriz debe ser el mismo numero de filas de la segunda.
  * @sa randomMatriz, leerMatriz, imprimirMatriz.
  */
 void multMatriz(){
-    int filaA{};        /**< Guarda el número de filas que tendrá la matriz A */
-    int filaB{};        /**< Guarda el número de filas que tendrá la matriz B */
-    int columnaA{};     /**< Guarda el número de columnas que tendrá la matriz A */
-    int columnaB{};     /**< Guarda el número de columnas que tendrá la matriz B */
+    int filaA{};        /**< int filaA Guarda el número de filas que tendrá la matriz A */
+    int filaB{};        /**< int filaB Guarda el número de filas que tendrá la matriz B */
+    int columnaA{};     /**< int columnaA Guarda el número de columnas que tendrá la matriz A */
+    int columnaB{};     /**< int columnaB Guarda el número de columnas que tendrá la matriz B */
 
     cout << "\nEL NUMERO DE FILAS DE LA MATRIZ B DEBE SER"
          << "\nIGUAL AL NUMERO DE COLUMNAS DE LA MATRIZ A";
@@ -366,7 +363,6 @@ void multMatriz(){
 
  /**
  * @brief transMatriz Saca la transpuestade una matriz.
- * @return La transpuesta de una matriz.
  * @sa randomMatriz, leerMatriz, imprimirMatriz.
  */
 void transMatriz(){
