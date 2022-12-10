@@ -1,0 +1,26 @@
+# depslib dependency file v1.0
+1670459888 source:e:\practicas poo\practica3\main.cpp
+	"Practica3.h"
+	<iostream>
+
+1670461758 e:\practicas poo\practica3\include\practica3.h
+
+1670464280 source:e:\practicas poo\practica3\src\practica3.cpp
+	"Practica3.h"
+	<iostream>
+	<chrono>
+	<random>
+
+1670629281 source:c:\users\ikerf\desktop\upiita\3er semestre\poo\practicas-poo\practica3\main.cpp
+	"Practica3.h"
+	<iostream>
+
+1670541950 c:\users\ikerf\desktop\upiita\3er semestre\poo\practicas-poo\practica3\include\practica3.h
+
+1670629754 source:c:\users\ikerf\desktop\upiita\3er semestre\poo\practicas-poo\practica3\src\practica3.cpp
+	"Practica3.h"
+	<iostream>
+	<chrono>
+	<random>
+	<windows.h>
+
