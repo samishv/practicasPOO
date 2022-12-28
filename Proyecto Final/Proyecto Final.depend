@@ -1,0 +1,41 @@
+# depslib dependency file v1.0
+1672183503 source:c:\users\ikerf\desktop\upiita\3er semestre\poo\practicas-poo\proyecto final\main.cpp
+	<iostream>
+	"Torneo.h"
+
+1672189101 c:\users\ikerf\desktop\upiita\3er semestre\poo\practicas-poo\proyecto final\include\torneo.h
+	"Categoria.h"
+
+1672191211 c:\users\ikerf\desktop\upiita\3er semestre\poo\practicas-poo\proyecto final\include\categoria.h
+	"Prototipo.h"
+	<string>
+
+1672189982 c:\users\ikerf\desktop\upiita\3er semestre\poo\practicas-poo\proyecto final\include\prototipo.h
+	"Integrantes.h"
+	<string>
+
+1672191117 c:\users\ikerf\desktop\upiita\3er semestre\poo\practicas-poo\proyecto final\include\integrantes.h
+	<string>
+
+1672194106 source:c:\users\ikerf\desktop\upiita\3er semestre\poo\practicas-poo\proyecto final\src\categoria.cpp
+	"Categoria.h"
+	<iostream>
+	<sstream>
+	<string>
+
+1672193098 source:c:\users\ikerf\desktop\upiita\3er semestre\poo\practicas-poo\proyecto final\src\integrantes.cpp
+	"Integrantes.h"
+	<iostream>
+	<sstream>
+
+1672193938 source:c:\users\ikerf\desktop\upiita\3er semestre\poo\practicas-poo\proyecto final\src\prototipo.cpp
+	"Prototipo.h"
+	<iostream>
+	<string>
+	<sstream>
+
+1672189481 source:c:\users\ikerf\desktop\upiita\3er semestre\poo\practicas-poo\proyecto final\src\torneo.cpp
+	"Torneo.h"
+	<string>
+	<iostream>
+
